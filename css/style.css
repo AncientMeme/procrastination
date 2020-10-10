@@ -23,10 +23,12 @@
 }
 
 body {
-    background-color: gray;
+    color: #B3B3B3;
+    background-color: #D4DAD4;
 }
 
 h1 {
+    color: #7BD0A9;
     font-size: 1.3em;
 }
 
