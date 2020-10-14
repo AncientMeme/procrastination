@@ -53,6 +53,28 @@
                                         </a>
                                     </div>
                                 </section>
+
+                                <section>
+                                    <div style="border:1px; border-style:solid; margin-top:30px;">
+                                        <a href="#">
+                                            <div style="width:15%; display:inline-block; float:left;">
+                                                <img src='pictures/profile.jpg' width="50">
+                                            </div>
+                                            
+                                            <div style="width:70%; height:auto; display:inline-block; text-align:center;">
+                                                    <h3>Piano practise (For Elise) 2</h3>
+    
+                                                    <p style="text-align:left;">
+                                                        Today I practise the song called "For Elise" again...
+                                                    </p>
+                                            </div>
+    
+                                            <div style="width:10%; display:inline-block; text-align: right;">
+                                                <img src='pictures/like.png' width="30" height="30">  6
+                                            </div>
+                                        </a>   
+                                    </div>
+                                </section>
                                     
                                 <section>
                                     <div style="border:1px; border-style:solid; margin-top:30px;">
@@ -78,40 +100,6 @@
                                 </section>
                             </div>
 
-
-                            <div id="art" style="padding:30px;">
-
-                                <section>
-                                    <div style="border:1px; border-style:solid; text-align:center;">
-                                        <a href="#">
-                                            <img src='pictures/piano_map.jpg' width="100%">
-                                        </a>
-                                    </div>
-                                </section>
-                                    
-                                <section>
-                                    <div style="border:1px; border-style:solid; margin-top:30px;">
-                                        <a href="#">
-                                            <div style="width:15%; display:inline-block; float:left;">
-                                                <img src='pictures/profile.jpg' width="50">
-                                            </div>
-                                            
-                                            <div style="width:70%; height:auto; display:inline-block; text-align:center;">
-                                                <h3>Art practise (For Elise)</h3>
-    
-                                                <p style="text-align:left;">
-                                                    Today I practise the song called "For Elise". I found it difficult to difficult
-                                                    to play the sixteenth bar...
-                                                </p>
-                                            </div>
-    
-                                            <div style="width:10%; display:inline-block; text-align: right;">
-                                                <img src='pictures/like.png' width="30" height="30">  6
-                                            </div>
-                                        </a>
-                                    </div>
-                                </section>
-                            </div>
                         </div>
     
                         <div class="col-2" style="padding-left: 0%;">
@@ -119,15 +107,15 @@
                                 
                                 <li style="border-top-style:solid; border-right-style:solid; 
                                 border-bottom-style:solid; background-color: #ffffff;">
-                                    <a href="#piano">Music piano group 13</a>
+                                    <a herf="#piano">Music piano group 13</a>
                                 </li>
 
                                 <li style="border-right-style:solid; border-bottom-style:solid; background-color: #ffffff;">
-                                    <a href="#art">Traditional art group 17</a>
+                                    <a herf="#art">Traditional art group 17</a>
                                 </li>
                         
                                 <li style="border-right-style:solid; border-bottom-style:solid; background-color: #ffffff;">
-                                    <a href="#sport">Sport basketball group 2</a>
+                                    <a herf="#sport">Sport basketball group 2</a>
                                 </li>
 
                             </nav>
@@ -152,7 +140,7 @@
 
         <script>
             $(document).ready(function() {
-                $('#groups li a').click(function(){
+                $('#groups a').click(function(){
                     var dest = $(this).attr('href');
                     $('div.content').fadeOut(); // Hide all content divs
                     $(dest).fadeIn(); // Show the requested part
