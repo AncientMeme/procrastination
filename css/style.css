@@ -7,6 +7,7 @@
  * COMPONENTS
  * Banner..............The styling for page banner
  * Content.............Styling for page content
+ * Journal.............Specific Styling for Journal Page
  */
 
 /*------------------------------------*\
@@ -14,6 +15,12 @@
 \*------------------------------------*/
 /* Global Settings */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+/**
+ * Colour Palette
+ * Background: #D4DAD4 (light gray)
+ * Titles: #7BD0A9 (Lime Green)
+ */
 
 * {
     padding: 0;
@@ -23,7 +30,7 @@
 }
 
 body {
-    color: #B3B3B3;
+    color: gray;
     background-color: #D4DAD4;
 }
 
@@ -51,11 +58,10 @@ p {
 /* Banner Styling */
 #banner {
     width: 94vw;
-    height: 10vh;
     padding: 0 3vw;
 
     font-size: 1.2em;
-    background-color: limegreen;
+    background-color: white;
 
     display: flex;
     align-items: center;
@@ -63,19 +69,42 @@ p {
 }
 
 #links {
-    width: 20%;
-    color: white;
     display: flex;
     justify-content: space-between;
 }
 
+#home, #links a {
+    color: #7BD0A9;
+    text-decoration: none;
+    text-align: center;
+}
+
+#links a {
+    padding: 4vh 1em;
+}
+
+#links a:hover {
+    color: white;
+    background-color: #7BD0A9;
+}
+
+
 /* Content Styling */
+article, hr{
+    margin: 1em 5%;   
+}
+
 #breadcrumb {
     width: 60vw;
     margin: 0.5em 20vw;
 
-    color: lightgray;
+    color: grey;
     font-size: 1em;
+}
+
+#breadcrumb a {
+    color: grey;
+    text-decoration: none;
 }
 
 .content {
@@ -83,23 +112,47 @@ p {
     min-height: 2em;
     padding: 1em 0;
     margin: 0 20vw;
+    margin-bottom: 1.2em;
 
     background-color: whitesmoke;
 }
 
-.content h1{
-    margin: 0 5%;
-}
-
 .journal{
-    width: 86%;
+    width: 96%;
     max-height: 20vh;
     padding: 1em 2%;
-    margin: 0 5%;
+    margin: 0 0;
     margin-bottom: 2em;
 
     background-color: lightgray;
 
     display: flex;
     justify-content: space-evenly;
+}
+
+/* Journal Page Styling */
+#feedback-textbox {
+    min-height: 12vh;
+    padding: 0.4em;
+    margin: 1.2em 0;
+
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+#feedback-entry div {
+    text-align: right;
+} 
+
+#feedback-entry div a {
+    padding: 0 1em;
+    text-decoration: none;
+}
+
+#submit-feedback {
+    color: #7BD0A9;
+}
+
+#cancel-feedback {
+    color: gray;
 }
