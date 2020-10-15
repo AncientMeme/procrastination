@@ -6,34 +6,39 @@
     top: 1em 5%;
     padding-left: 1em;
     border:vw solid blue;
-    background-color: rgb(140, 190, 133);
+    background-color: whitesmoke;
 }
 .map{
     margin-top: 1em;
-    width: 100%;
+    position: absolute;
 }
-
+.phase2{
+    visibility: hidden;
+}
+.phase3{
+    visibility: hidden;
+}
 #Georgie{
-    color: #00FFFF;
+    color: #66BBCA;
 }
 #Saki{
-    color: blue;
+    color: #0E8654;
 }
 #Cheezi{
-    color: blue;
+    color: #996632;
 }
 #Alex{
     color: #736357;
 }
 #Jonjo{
-    color: blue;
+    color: #8CC63F;
 }
 #Arkosix{
-    color: blue;
+    color: #64206D;
 }
 #Margerit{
     color: #F15A24;    
 }
 #Tobi{
-    color: blue;
+    color: #B2C023;
 }
