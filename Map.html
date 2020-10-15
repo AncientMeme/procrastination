@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Map Page</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/stylemap.css">
+    </head>
+    <script>
+        // $(document).ready(function() {
+        //   $(function(){
+        //     $('.map').maphilight()
+        //     $('map area').click(function(e) {
+        //       var clickedArea = $(this); 
+        //       $('map area').each(function() {
+        //           hData = $(this).data('maphilight') || {}; // get
+        //           hData.alwaysOn = $(this).is(clickedArea); // modify
+        //           $(this).data('maphilight', hData ).trigger('alwaysOn.maphilight'); // set
+        //     });
+        //     });
+        //   });
+        // });
+        
+    </script>
+    <body>
+        <!-- Page Banner -->
+        <section id="banner">
+            <a id="home" href="home.html">Informal Learning</a>
+            <nav id="links">
+                <a>Groups</a>
+                <a>Journals</a>
+                <a>Profile</a>
+            </nav>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div id="breadcrumb">Home</div>
+        <section class = "leaderboard">
+            <article>
+                <h2>Leaderboard</h2>
+                <ol class= "phase 1">
+                    <li id = "Georgie">Georgie - 20%</li>
+                    <li id = "Saki">Super Saki - 17%</li>
+                    <li id = "Cheezi">Cheezi - 15%</li>
+                    <li id = "Alex">Alex (You) - 12%</li>
+                    <li id = "Jonjo">Jonjo - 10%</li>
+                    <li id = "Arkosix">Arkosix - 8%</li>
+                    <li id = "Margerit">MargerIT - 7%</li>
+                    <li id = "Tobi">Tobi - 7%</li>
+                </ol>
+            </article>
+        </section>
+        <section class="content">
+            <h1>Map</h1>
+            <article>
+                <img class= "map" id = "phase1" src="images/map-phase1.png" usemap="#LearningMap">
+                <map name= "LearningMap">
+                    <area target="" alt="Alex" title="Alex" href="#" data-maphilight='{"strokeWidth":,"fillColor":"ff0000","fillOpacity":0.3}' coords="570,154,606,236,700,251,700,1,404,0" shape="poly">
+    
+                </map>
+                <img class= "map" id="phase2" src= "images/map-phase2.png">
+                <img class= "map" id="phase3" src= "images/map-phase3.png">
+            </article>
+        </section>
+        
+    </body>

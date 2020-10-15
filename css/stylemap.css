@@ -1,0 +1,39 @@
+.leaderboard{
+    width:10%;
+    position: absolute;
+    text-align: right;
+    left: 5%;
+    top: 1em 5%;
+    padding-left: 1em;
+    border:vw solid blue;
+    background-color: rgb(140, 190, 133);
+}
+.map{
+    margin-top: 1em;
+    width: 100%;
+}
+
+#Georgie{
+    color: #00FFFF;
+}
+#Saki{
+    color: blue;
+}
+#Cheezi{
+    color: blue;
+}
+#Alex{
+    color: #736357;
+}
+#Jonjo{
+    color: blue;
+}
+#Arkosix{
+    color: blue;
+}
+#Margerit{
+    color: #F15A24;    
+}
+#Tobi{
+    color: blue;
+}
