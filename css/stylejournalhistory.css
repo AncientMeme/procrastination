@@ -1,0 +1,24 @@
+.leaderboard{
+    width:10%;
+    position: absolute;
+    text-align: left;
+    left: 5%;
+    top: 1em 5%;
+    padding-left: 1em;
+    background-color: #FFFFFF;
+}
+
+.map{
+    margin-top: 1em;
+    width: 100%;
+}
+
+.journalhistory-footer {
+    margin-top: 1em;
+
+}
+
+.journalhistory-footer *{
+    font-size: 0.8em;
+    margin-right: 1em;
+}
