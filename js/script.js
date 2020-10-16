@@ -72,6 +72,12 @@ function FeedbackUpvotes(upvotes) {
 document.addEventListener('DOMContentLoaded', function(event) {
 
     // Initialize listener for Journal Feedback
-    SubmitFeedback();
-    FeedbackUpvotes(0);
+    if(document.getElementById("journal-js") != null){
+        SubmitFeedback();
+        FeedbackUpvotes(0);
+    }
+    
+    // Change Map image according to land state
+
+
 })
