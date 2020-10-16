@@ -130,6 +130,11 @@ article, hr{
     justify-content: space-evenly;
 }
 
+.journal-preview a{
+    color: gray;
+    text-decoration: none;
+}
+
 /* Journal Page Styling */
 #feedback-textbox {
     min-height: 10vh;
