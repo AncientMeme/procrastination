@@ -129,12 +129,19 @@ article, hr{
     display: flex;
     justify-content: space-evenly;
 }
+
 #map{
     text-align: center;
 }
 #map img{
     width: 60%;
 }
+
+.journal-preview a{
+    color: gray;
+    text-decoration: none;
+}
+
 /* Journal Page Styling */
 #feedback-textbox {
     min-height: 10vh;
