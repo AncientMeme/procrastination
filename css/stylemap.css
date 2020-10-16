@@ -1,0 +1,44 @@
+.leaderboard{
+    width:10%;
+    position: absolute;
+    text-align: right;
+    left: 5%;
+    top: 1em 5%;
+    padding-left: 1em;
+    border:vw solid blue;
+    background-color: whitesmoke;
+}
+.map{
+    margin-top: 1em;
+    position: absolute;
+}
+.phase2{
+    visibility: hidden;
+}
+.phase3{
+    visibility: hidden;
+}
+#Georgie{
+    color: #66BBCA;
+}
+#Saki{
+    color: #0E8654;
+}
+#Cheezi{
+    color: #996632;
+}
+#Alex{
+    color: #736357;
+}
+#Jonjo{
+    color: #8CC63F;
+}
+#Arkosix{
+    color: #64206D;
+}
+#Margerit{
+    color: #F15A24;    
+}
+#Tobi{
+    color: #B2C023;
+}

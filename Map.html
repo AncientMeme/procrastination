@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Map Page</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/stylemap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/maphilight-master/jquery.maphilight.js"></script>
+    </head>
+    <script>
+        $(document).ready(function() {
+          $(function(){
+            $('.map').maphilight()
+            $('map area').click(function(e) {
+              var clickedArea = $(this); 
+              $('map area').each(function() {
+                  hData = $(this).data('maphilight') || {}; // get
+                  hData.alwaysOn = $(this).is(clickedArea); // modify
+                  $(this).data('maphilight', hData ).trigger('alwaysOn.maphilight'); // set
+            });
+            });
+          });
+        });
+    </script>
+    <body>
+        <!-- Page Banner -->
+        <section id="banner">
+            <a id="home" href="home.html">Informal Learning</a>
+            <nav id="links">
+                <a>Groups</a>
+                <a href="journalhistory.html">Journals</a>
+                <a>Profile</a>
+            </nav>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div id="breadcrumb"><a href="home.html">Home</a> > Map</div>
+        <section class = "leaderboard">
+            <article>
+                <h2>Leaderboard</h2>
+                <ol class= "phase1">
+                    <li id = "Georgie">Georgie - 20%</li>
+                    <li id = "Saki">Super Saki - 17%</li>
+                    <li id = "Cheezi">Cheezi - 15%</li>
+                    <li id = "Alex">Alex (You) - 12%</li>
+                    <li id = "Jonjo">Jonjo - 10%</li>
+                    <li id = "Arkosix">Arkosix - 8%</li>
+                    <li id = "Margerit">MargerIT - 7%</li>
+                    <li id = "Tobi">Tobi - 7%</li>
+                </ol>
+                <ol class= "phase2">
+                    <li id = "Georgie">Georgie - 20%</li>
+                    <li id = "Saki">Super Saki - 17%</li>
+                    <li id = "Cheezi">Cheezi - 15%</li>
+                    <li id = "Alex">Alex (You) - 15%</li>
+                    <li id = "Jonjo">Jonjo - 10%</li>
+                    <li id = "Arkosix">Arkosix - 8%</li>
+                    <li id = "Margerit">MargerIT - 7%</li>
+                    <li id = "Tobi">Tobi - 7%</li>
+                </ol>
+                <ol class= "phase3">
+                    <li id = "Georgie">Georgie - 19%</li>
+                    <li id = "Saki">Super Saki - 16%</li>
+                    <li id = "Alex">Alex (You) - 16%</li>
+                    <li id = "Cheezi">Cheezi - 15%</li>
+                    <li id = "Jonjo">Jonjo - 10%</li>
+                    <li id = "Arkosix">Arkosix - 8%</li>
+                    <li id = "Margerit">MargerIT - 9%</li>
+                    <li id = "Tobi">Tobi - 7%</li>
+                </ol>
+            </article>
+        </section>
+        <section class="content">
+            <article>
+                <h1>Map</h1>
+                <img class= "map phase1" src="images/map-phase1.png" usemap="#LearningMap">
+                <map name= "LearningMap">
+                    <area target="" id="AlexM" alt="Alex" title="Alex" href="" coords="567,156,608,238,700,251,699,4,404,0" data-maphilight='{"strokeWidth":3,"fillColor":"236337","fillOpacity":0.5}' shape="poly">
+                    <area target="" id= "GeorgieM" alt="Georgie" title="Georgie" href="" coords="602,228,605,235,700,249,700,394,176,394,183,383,208,336,547,221" shape="poly">
+                    <area target="" id= "SakiM" alt="Saki" title="Saki" href="" coords="564,152,542,223,433,259,452,206,310,136,312,96,187,0,406,4" shape="poly">
+                    <area target="" id= "ArkosixM" alt="Arkosix" title="Arkosix" href="" coords="218,316,186,378,175,392,1,391,1,252,140,325" shape="poly">
+                    <area target="" id= "TobiM" alt="Tobi" title="Tobi" href="" coords="283,310,281,234,58,202,95,300,140,324,220,314,212,332" shape="poly">
+                    <area target="" id= "JonjoM" alt="Jonjo" title="Jonjo" href="" coords="41,77,41,155,95,299,0,255,0,1,84,-1,91,55" shape="poly">
+                    <area target="" id= "CheeziM" alt="Cheezi" title="Cheezi" href="" coords="311,96,305,237,59,202,41,150,42,77,91,53,84,0,183,1" shape="poly">
+                    <area target="" id= "MargeritM" alt="Margerit" title="Margerit" href="" coords="452,206,433,258,284,311,281,233,309,240,309,136" shape="poly">
+
+                </map>
+            
+                <img class= "map phase2" src= "images/map-phase2.png">
+                <img class= "map phase3" src= "images/map-phase3.png">
+            </article>
+        </section>
+        <script src="js/mapscript.js"></script>
+    </body>

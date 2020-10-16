@@ -130,6 +130,18 @@ article, hr{
     justify-content: space-evenly;
 }
 
+#map{
+    text-align: center;
+}
+#map img{
+    width: 60%;
+}
+
+.journal-preview a{
+    color: gray;
+    text-decoration: none;
+}
+
 /* Journal Page Styling */
 #feedback-textbox {
     min-height: 10vh;
@@ -189,20 +201,6 @@ article, hr{
     margin: 1em 0;
 }
 
-
-/* Homepage style */
-
-#content .jumbotron {
-    background-color: #D4DAD4;
-}
-
-#content .nav {
-
-    float: left;
-    width: 200px;
-}
-
-  
 li {
 
     list-style-type: none;

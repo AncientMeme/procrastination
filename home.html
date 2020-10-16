@@ -1,64 +1,57 @@
-<html>
+<!doctype html>
+
+<html lang="en">
 
     <head>
-        
+        <meta charset="utf-8">
+        <title>Informal Learning</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        
         <link rel="stylesheet" href="css/style.css">
-        
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
 
-        <title>Informal Learning</title>
-    
     </head>
 
-    <body style="background-color: #D4DAD4;">
-
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffffff; border:1px; border-bottom-style: solid; margin:3px;">
-                <a class="navbar-brand" href="home.html">
-                    <img src='pictures/logo.jpg' width="100">
-                </a>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-
-                  </ul>
-
-                  <ul>
-                    <a class="nav-link" href="#">
-                        <img src='pictures/profile.jpg'>
-                    </a>
-                  </ul>
-                </div>
+    <body>
+        <!-- Page Banner -->
+        <section id="banner">
+            <a id="home" href="home.html">Informal Learning</a>
+            <nav id="links">
+                <a>Groups</a>
+                <a href="journalhistory.html">Journals</a>
+                <a>Profile</a>
             </nav>
-        </header>
+        </section>
 
+        <!-- Breadcrumb -->
+        <div id="breadcrumb">Home</div>
+
+        <!-- Page Content -->
         <section id='content'>
 
-            <div class="jumbotron">
+
                 <div class='container'>
                     <div class="row">
     
-                        <div id='content' class="col-10" style="border:3px; border-style:solid; padding:30px; background-color: #e3f2fd;">
+                        <div id='content' class="col-10" style="padding:30px; background-color: whitesmoke;">
                             <div id="piano" style="padding:30px;">
-
+                                <h1>Group Map Preview</h1>
                                 <section>
-                                    <div style="border:1px; border-style:solid; text-align:center;">
-                                        <a href="#">
-                                            <img src='pictures/piano_map.jpg' width="100%">
+                                    <div>
+                                        <a href="Map.html">
+                                            <img src='images/map-phase1.png' width="100%">
                                         </a>
                                     </div>
                                 </section>
                                     
                                 <section>
-                                    <div style="border:1px; border-style:solid; margin-top:30px;">
-                                        <a href="#">
+                                    <div style="margin-top:30px;"><h1>Newest Journals</h1></div>
+                                    <div style="background-color: #D4DAD4;">
+                                        
+                                        <a href="journal.html">
                                             <div style="width:15%; display:inline-block; float:left;">
-                                                <img src='pictures/profile.jpg' width="50">
+                                                <img src='images/profile.jpg' width="50">
                                             </div>
                                             
                                             <div style="width:70%; height:auto; display:inline-block; text-align:center;">
@@ -71,7 +64,7 @@
                                             </div>
     
                                             <div style="width:10%; display:inline-block; text-align: right;">
-                                                <img src='pictures/like.png' width="30" height="30">  6
+                                                <img src='images/like.png' width="30" height="30">  6
                                             </div>
                                         </a>
                                     </div>
@@ -79,54 +72,21 @@
                             </div>
 
 
-                            <div id="art" style="padding:30px;">
-
-                                <section>
-                                    <div style="border:1px; border-style:solid; text-align:center;">
-                                        <a href="#">
-                                            <img src='pictures/piano_map.jpg' width="100%">
-                                        </a>
-                                    </div>
-                                </section>
-                                    
-                                <section>
-                                    <div style="border:1px; border-style:solid; margin-top:30px;">
-                                        <a href="#">
-                                            <div style="width:15%; display:inline-block; float:left;">
-                                                <img src='pictures/profile.jpg' width="50">
-                                            </div>
-                                            
-                                            <div style="width:70%; height:auto; display:inline-block; text-align:center;">
-                                                <h3>Art practise (For Elise)</h3>
-    
-                                                <p style="text-align:left;">
-                                                    Today I practise the song called "For Elise". I found it difficult to difficult
-                                                    to play the sixteenth bar...
-                                                </p>
-                                            </div>
-    
-                                            <div style="width:10%; display:inline-block; text-align: right;">
-                                                <img src='pictures/like.png' width="30" height="30">  6
-                                            </div>
-                                        </a>
-                                    </div>
-                                </section>
-                            </div>
+                            
                         </div>
     
                         <div class="col-2" style="padding-left: 0%;">
                             <nav id='groups'>
                                 
-                                <li style="border-top-style:solid; border-right-style:solid; 
-                                border-bottom-style:solid; background-color: #ffffff;">
+                                <li style="background-color: #ffffff;">
                                     <a href="#piano">Music piano group 13</a>
                                 </li>
 
-                                <li style="border-right-style:solid; border-bottom-style:solid; background-color: #ffffff;">
+                                <li style="background-color: #acadb1;">
                                     <a href="#art">Traditional art group 17</a>
                                 </li>
                         
-                                <li style="border-right-style:solid; border-bottom-style:solid; background-color: #ffffff;">
+                                <li style="background-color: #98a395;">
                                     <a href="#sport">Sport basketball group 2</a>
                                 </li>
 
@@ -134,18 +94,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
             
         </section>
 
 
         <div style="position: absolute; position: fixed; bottom: 10px; right: 10px;">
             <a href="submission.html">
-                <img src="pictures/add.jpg" width="50" height="50">
+                <img src="images/add.jpg" width="50" height="50">
             </a>
 
             <a href="#top" target="_self">
-                <img src="pictures/top.jpg" width="50" height="50">    
+                <img src="images/top.jpg" width="50" height="50">    
             </a>
         </div>
 
@@ -161,6 +121,7 @@
                 });
             });
         </script>
+        
     </body>
 
 </html>
