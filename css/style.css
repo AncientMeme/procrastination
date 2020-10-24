@@ -202,8 +202,13 @@ article, hr{
 }
 
 li {
-
     list-style-type: none;
     background: #c3c3c3;
     text-align: left;
+}
+
+#new-journal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
 }
