@@ -37,7 +37,7 @@ body {
 
 h1 {
     color: #7BD0A9;
-    font-size: 1.4em;
+    font-size: 1.6em;
 }
 
 h2 {
@@ -45,11 +45,11 @@ h2 {
 }
 
 h3 {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 p {
-    font-size: 0.8em;
+    font-size: 0.85em;
 }
 
 /*------------------------------------*\
@@ -134,11 +134,20 @@ article, hr{
 #map{
     text-align: center;
 }
+
 #map img{
     width: 60%;
 }
 
-.journal-preview a{
+.journal-preview p{
+    margin-top: 1.2em;
+}
+
+.journal-preview{
+    text-decoration: none;
+}
+
+.journal-preview *{
     color: gray;
     text-decoration: none;
 }
@@ -195,6 +204,23 @@ article, hr{
 }
 
 /* Journal Page Styling */
+#user-journal *{
+    margin: 0.8em 0;
+}
+
+#user-journal h1 {
+    margin: 0;
+}
+
+#user-journal h3 {
+    margin-top: 0.2em;
+}
+
+#user-journal img {
+    max-width: 50%;
+    text-align: center;
+}
+
 #feedback-textbox {
     min-height: 10vh;
     padding: 0.4em;
@@ -225,11 +251,19 @@ article, hr{
     margin-top: 1em;
     display: flex;
     flex-flow: row;
+    align-items: center;
 }
 
 .feedback-footer *{
     font-size: 0.8em;
     margin-right: 1em;
+}
+
+.upvote-button {
+    padding: 0.2em;
+    border-radius: 5px;
+    color: white;
+    background-color: #7BD0A9;
 }
 
 #user-feedback{
@@ -251,4 +285,9 @@ article, hr{
 #user-feedback hr {
     width: 100%;
     margin: 1em 0;
+}
+
+#user-feedback .upvote-button {
+    color: grey;
+    background-color: transparent;
 }
