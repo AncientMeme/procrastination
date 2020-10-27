@@ -81,7 +81,7 @@ p {
 }
 
 #links a {
-    padding: 4vh 1em;
+    padding: 0.6em 1em;
 }
 
 #links a:hover {
@@ -181,6 +181,11 @@ article, hr{
     background-color: #7BD0A9;
     text-decoration: none;
     text-align: center;
+}
+
+#login-window a:hover {
+    color: #7BD0A9;
+    background-color: white;
 }
 
 .login-textbox {
