@@ -68,14 +68,53 @@ function FeedbackUpvotes(upvotes) {
     }
 }
 
+// Simualate the upvote buttons
+function ActivateUpvoteButton() {
+    var UpvoteButtons = document.getElementsByClassName("upvote-button");
+
+    // Make all upvote buttons interactable
+    for(var i = 0; i < UpvoteButtons.length; i++) {
+        // Find the element that counts upvotes
+        let upvoteButton = UpvoteButtons[i];
+        let buttonParent = UpvoteButtons[i].parentElement;
+        let upvoteSection = buttonParent.getElementsByTagName("p")[0];
+
+        upvoteButton.addEventListener("click", function(button) {
+            // Prevent button link
+            button.preventDefault();            
+
+            if(!upvoteButton.classList.contains("clicked")) {
+                // Add a class so the button only works once
+                upvoteButton.classList.add("clicked");
+
+                // Get the current upvote count and add 1
+                let currentUpvotes = parseInt(upvoteSection.innerHTML.split(" ")[0]);
+                upvoteSection.innerHTML = (currentUpvotes + 1) + " / 4";
+
+                // If the upvote reaches 4 after adding one
+                if(currentUpvotes + 1 >= 4) {
+                    let landFeedback = buttonParent.getElementsByTagName("b")[0];
+                    landFeedback.classList.add("show");
+                }
+            }
+        });
+    }
+   
+}
+
 // Loads the Javascript once it is ready
 document.addEventListener('DOMContentLoaded', function(event) {
 
-    // Initialize listener for Journal Feedback
     if(document.getElementById("journal-js") != null){
+        // Initialize listener for Journal Feedback
         SubmitFeedback();
         FeedbackUpvotes(0);
+
+        // Initalize upvote buttons
+        ActivateUpvoteButton();
     }
+
+    
     
     // Change Map image according to land state
 

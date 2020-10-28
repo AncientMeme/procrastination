@@ -259,11 +259,24 @@ article, hr{
     margin-right: 1em;
 }
 
+.feedback-footer b {
+    visibility: hidden;
+}
+
+.feedback-footer b.show {
+    visibility: visible;
+}
+
 .upvote-button {
     padding: 0.2em;
+    text-decoration: none;
     border-radius: 5px;
     color: white;
     background-color: #7BD0A9;
+}
+
+.upvote-button.clicked {
+    background-color: gray;
 }
 
 #user-feedback{
