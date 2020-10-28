@@ -7,8 +7,10 @@
  * COMPONENTS
  * Banner..............The styling for page banner
  * Content.............Styling for page content
+ * Home................Specific Styling for Home Page
  * Login...............Specific Styling for Login Page
  * Journal.............Specific Styling for Journal Page
+ * Journal-Submission..Specific Styling for Journal Submission Page
  */
 
 /*------------------------------------*\
@@ -50,6 +52,10 @@ h3 {
 
 p {
     font-size: 0.85em;
+}
+
+.hide {
+    display: none;
 }
 
 /*------------------------------------*\
@@ -139,6 +145,14 @@ article, hr{
     width: 60%;
 }
 
+#new-journal{ 
+    display: none;
+}
+
+#new-journal.show{ 
+    display: block;
+}
+
 .journal-preview p{
     margin-top: 1.2em;
 }
@@ -150,6 +164,31 @@ article, hr{
 .journal-preview *{
     color: gray;
     text-decoration: none;
+}
+
+/* Home Page Styling */
+#submit-journal {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+    color: white;
+    background-color: #7BD0A9;
+    font-size: 100%;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+#submit-journal.hide {
+    display: none;
 }
 
 /* Login Page Styling */
@@ -247,6 +286,14 @@ article, hr{
     color: gray;
 }
 
+#thank-message {
+    display: none;
+}
+
+#thank-message.show {
+    display: inline;
+}
+
 .feedback-footer {
     margin-top: 1em;
     display: flex;
@@ -264,6 +311,7 @@ article, hr{
 }
 
 .feedback-footer b.show {
+    color: #7BD0A9;
     visibility: visible;
 }
 
@@ -303,4 +351,31 @@ article, hr{
 #user-feedback .upvote-button {
     color: grey;
     background-color: transparent;
+}
+
+/* Journal Submission Styling */
+#journal-textbox {
+    min-height: 25vh;
+    padding: 0.4em;
+    margin: 1.2em 0;
+
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+#journal-submission img{
+    max-width: 40%;
+}
+
+#entry-footer{
+    margin-top: 3em;
+    text-align: right;
+}
+
+#entry-submit{
+    padding: 0.2em;
+    border-radius: 5px;
+    color: white;
+    background-color: #7BD0A9;
+    text-decoration: none;
 }

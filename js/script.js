@@ -45,8 +45,20 @@ function safeParse(string) {
 function SubmitFeedback() {
     document.getElementById("submit-feedback").addEventListener("click", function(button) {
         button.preventDefault();
+
+        // Show the comment in the feedback feed
         let article = document.getElementById("user-feedback");
         article.classList.add("show");
+
+        // Change the display for the page
+        let textbox = document.getElementById("feedback-textbox");
+        let submission = document.getElementById("feedback-submission");
+        textbox.classList.add("hide");
+        submission.classList.add("hide");
+
+        // Show the thank you message
+        let message = document.getElementById("thank-message");
+        message.classList.add("show");
     });
 }
 
@@ -102,19 +114,51 @@ function ActivateUpvoteButton() {
    
 }
 
+// Mark if a journal is submitted
+function markJournalSubmission() {
+    let button = document.getElementById("entry-submit");
+
+    // Mark submission and redirect to journal page
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        sessionStorage.setItem("submitted", "1");
+        window.location.href = "journal-2.html";
+    });
+}
+
+// Check if a journal is submitted
+function checkJournalSubmission() {
+    let submitted = sessionStorage.getItem("submitted");
+
+    if(submitted === "1") {
+        document.getElementById("new-journal").classList.add("show");
+        document.getElementById("submit-journal").classList.add("hide");
+    }
+}
+
 // Loads the Javascript once it is ready
 document.addEventListener('DOMContentLoaded', function(event) {
 
+    // JS for home page
+    if(document.getElementById("home-js") != null) {
+        checkJournalSubmission();
+    }
+
+    // JS for all journal pages
     if(document.getElementById("journal-js") != null){
         // Initialize listener for Journal Feedback
-        SubmitFeedback();
-        FeedbackUpvotes(0);
+        if(document.getElementById("submit-feedback") != null) {
+            SubmitFeedback();
+            FeedbackUpvotes(0);
+        }
 
         // Initalize upvote buttons
         ActivateUpvoteButton();
     }
 
-    
+    if(document.getElementById("submission-js") != null){
+        markJournalSubmission();
+    }
     
     // Change Map image according to land state
 
