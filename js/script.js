@@ -31,22 +31,12 @@ function addLand() {
     console.log("Current Land State: " + land);
 }
 
-// Safely parse a Stringify JSON
-function safeParse(string) {
-	var parsedJSON = [];
-	if(string != null) {
-		parsedJSON = JSON.parse(string);
-	}
-
-	return parsedJSON;
-}
-
 // Initalize all the acitivty marks
 function initializeActivityMarks() {
     if(sessionStorage.getItem("journalLand") == null) {
         sessionStorage.setItem("journalLand", "0");
         sessionStorage.setItem("feedbackLand", "0");
-        sessionStorage.setItem("entryLand", "0");
+        sessionStorage.setItem("upvoteLand", "0");
     }
 }
 
@@ -156,27 +146,39 @@ function ActivateUpvoteButton() {
         let buttonParent = UpvoteButtons[i].parentElement;
         let upvoteSection = buttonParent.getElementsByTagName("p")[0];
 
-        upvoteButton.addEventListener("click", function(button) {
-            // Prevent button link
-            button.preventDefault();            
+        // Check if the button should be disabled
+        let isDisable = (parseInt(sessionStorage.getItem("upvoteLand")) == 1);
 
-            if(!upvoteButton.classList.contains("clicked")) {
-                // Add a class so the button only works once
-                upvoteButton.classList.add("clicked");
-
-                // Get the current upvote count and add 1
-                let currentUpvotes = parseInt(upvoteSection.innerHTML.split(" ")[0]);
-                upvoteSection.innerHTML = (currentUpvotes + 1) + " / 4";
-
-                // If the upvote reaches 4 after adding one
-                if(currentUpvotes + 1 >= 4) {
-                    let landFeedback = buttonParent.getElementsByTagName("b")[0];
-                    landFeedback.classList.add("show");
+        if (isDisable && upvoteButton.id === "astro-button") {
+            upvoteSection.innerHTML = "4 / 4";
+            upvoteButton.classList.add("clicked");
+            let landFeedback = buttonParent.getElementsByTagName("b")[0];
+            landFeedback.classList.add("show");
+        } else {
+            upvoteButton.addEventListener("click", function(button) {
+                // Prevent button link
+                button.preventDefault();            
+    
+                if(!upvoteButton.classList.contains("clicked")) {
+                    // Add a class so the button only works once
+                    upvoteButton.classList.add("clicked");
+    
+                    // Get the current upvote count and add 1
+                    let currentUpvotes = parseInt(upvoteSection.innerHTML.split(" ")[0]);
+                    upvoteSection.innerHTML = (currentUpvotes + 1) + " / 4";
+    
+                    // If the upvote reaches 4 after adding one
+                    if(currentUpvotes + 1 >= 4) {
+                        let landFeedback = buttonParent.getElementsByTagName("b")[0];
+                        landFeedback.classList.add("show");
+    
+                        // Give land to astro as he is the only one with 3 / 4
+                        sessionStorage.setItem("upvoteLand", "1");
+                    } 
                 }
-            }
-        });
+            });
+        }
     }
-   
 }
 
 // Mark if a journal is submitted
@@ -205,7 +207,8 @@ function checkJournalSubmission() {
 function changeMap(map) {
     // Get the correct map
     mapState = loadLandState();
-    mapName = "images/map-" + mapState + "-0.png";
+    astroState = parseInt(sessionStorage.getItem("upvoteLand"));
+    mapName = "images/map-" + mapState + "-" + astroState + ".png";
 
     map.src = mapName;
 }
