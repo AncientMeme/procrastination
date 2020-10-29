@@ -142,7 +142,6 @@ article, hr{
     text-decoration: none;
 }
 
-<<<<<<< HEAD
 /* Login Page Styling */
 #login {
     height: 100vh;
@@ -194,8 +193,6 @@ article, hr{
     border-radius: 5px;
 }
 
-=======
->>>>>>> 304301a8b68ef271d779bb8f368afd5aa26b0d07
 /* Journal Page Styling */
 #feedback-textbox {
     min-height: 10vh;
