@@ -2,6 +2,10 @@
 
 This is the prototype is called Journey, by team Procrastination.
 
+# Promotional Material
+- Poster - https://github.com/AncientMeme/procrastination/blob/master/WikiImages/Poster.jpg
+- Information Sheet - https://github.com/AncientMeme/procrastination/blob/master/WikiImages/Information%20Sheet.jpg
+
 # Contents
 The prototype is built by using HTML/CSS/JS to simulate the interactions:
 - HTML files - Files for the basic structures of the web pages.
