@@ -7,7 +7,6 @@
  * COMPONENTS
  * Banner..............The styling for page banner
  * Content.............Styling for page content
- * Login...............Specific Styling for Login Page
  * Journal.............Specific Styling for Journal Page
  */
 
@@ -58,7 +57,7 @@ p {
 
 /* Banner Styling */
 #banner {
-    width: 94vw;
+    
     padding: 0 3vw;
 
     font-size: 1.2em;
@@ -143,6 +142,7 @@ article, hr{
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 /* Login Page Styling */
 #login {
     height: 100vh;
@@ -194,6 +194,8 @@ article, hr{
     border-radius: 5px;
 }
 
+=======
+>>>>>>> 304301a8b68ef271d779bb8f368afd5aa26b0d07
 /* Journal Page Styling */
 #feedback-textbox {
     min-height: 10vh;
@@ -251,4 +253,16 @@ article, hr{
 #user-feedback hr {
     width: 100%;
     margin: 1em 0;
+}
+
+li {
+    list-style-type: none;
+    background: #c3c3c3;
+    text-align: left;
+}
+
+#new-journal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
 }

@@ -81,3 +81,18 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 })
+
+document.addEventListener('DOMContentLoaded', function(event) {
+
+    if (window.location.hash === '#new-journal') {
+        submitJournal();
+    }
+
+})
+
+
+function submitJournal() {
+
+   document.getElementById("new-journal").style.display = "block";
+
+}
