@@ -260,6 +260,16 @@ article, hr{
     text-align: center;
 }
 
+#journal-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#journal-footer p{
+    margin-left: 1em;
+}
+
 #feedback-textbox {
     min-height: 10vh;
     padding: 0.4em;

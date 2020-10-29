@@ -73,7 +73,7 @@ function FeedbackUpvotes(upvotes) {
     }
 
     if(upvotes < 4) {
-        setTimeout(FeedbackUpvotes, 1500, upvotes);
+        setTimeout(FeedbackUpvotes, 1000, upvotes);
     } else {
         counter.getElementsByTagName("b")[0].classList.add("show");
         addLand();
@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         ActivateUpvoteButton();
     }
 
+    // JS for journal submission
     if(document.getElementById("submission-js") != null){
         markJournalSubmission();
     }
@@ -164,18 +165,3 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 })
-
-document.addEventListener('DOMContentLoaded', function(event) {
-
-    if (window.location.hash === '#new-journal') {
-        submitJournal();
-    }
-
-})
-
-
-function submitJournal() {
-
-   document.getElementById("new-journal").style.display = "block";
-
-}
