@@ -41,43 +41,108 @@ function safeParse(string) {
 	return parsedJSON;
 }
 
-// Setup Feedback Submission Button
-function SubmitFeedback() {
-    document.getElementById("submit-feedback").addEventListener("click", function(button) {
-        button.preventDefault();
-
-        // Show the comment in the feedback feed
-        let article = document.getElementById("user-feedback");
-        article.classList.add("show");
-
-        // Change the display for the page
-        let textbox = document.getElementById("feedback-textbox");
-        let submission = document.getElementById("feedback-submission");
-        textbox.classList.add("hide");
-        submission.classList.add("hide");
-
-        // Show the thank you message
-        let message = document.getElementById("thank-message");
-        message.classList.add("show");
-    });
+// Initalize all the acitivty marks
+function initializeActivityMarks() {
+    if(sessionStorage.getItem("journalLand") == null) {
+        sessionStorage.setItem("journalLand", "0");
+        sessionStorage.setItem("feedbackLand", "0");
+        sessionStorage.setItem("entryLand", "0");
+    }
 }
 
-// Simulate the user upvotes
+// Setup Feedback Submission Button
+function SubmitFeedback() {
+    // Check if user has submitted feedback
+    let feedbackLand = parseInt(sessionStorage.getItem("feedbackLand"));
+
+    if(feedbackLand == 0) {
+        document.getElementById("submit-feedback").addEventListener("click", function(button) {
+            button.preventDefault();
+    
+            // Show the feedback window
+            ShowFeedback();
+        });
+    } else {
+        // Show the feedback window
+        ShowFeedback();
+    }
+}
+
+// Show the submitted feedback
+function ShowFeedback() {
+    // Show the comment in the feedback feed
+    let article = document.getElementById("user-feedback");
+    article.classList.add("show");
+
+    // Change the display for the page
+    let textbox = document.getElementById("feedback-textbox");
+    let submission = document.getElementById("feedback-submission");
+    textbox.classList.add("hide");
+    submission.classList.add("hide");
+
+    // Show the thank you message
+    let message = document.getElementById("thank-message");
+    message.classList.add("show");
+}
+
+// Simulate the user feedback upvotes
 function FeedbackUpvotes(upvotes) {
+    // Divs to modify
     let feedback = document.getElementById("user-feedback");
     let counter = feedback.getElementsByClassName("feedback-footer")[0];
-    if(feedback.classList.contains("show")) {
-        upvotes++;
-        
-        counter.getElementsByTagName("p")[0].innerHTML = `${upvotes} / 4`;
-    }
 
-    if(upvotes < 4) {
-        setTimeout(FeedbackUpvotes, 1000, upvotes);
+    // Check if the activity was done
+    let feedbackMark = parseInt(sessionStorage.getItem("feedbackLand"));
+
+    if(feedbackMark == 0) {
+        if(feedback.classList.contains("show")) {
+            upvotes++;
+            
+            counter.getElementsByTagName("p")[0].innerHTML = `${upvotes} / 4`;
+        }
+    
+        if(upvotes < 4) {
+            setTimeout(FeedbackUpvotes, 1000, upvotes);
+        } else {
+            counter.getElementsByTagName("b")[0].classList.add("show");
+            sessionStorage.setItem("feedbackLand", "1");
+            addLand();
+        }
     } else {
+        counter.getElementsByTagName("p")[0].innerHTML = `4 / 4`;
         counter.getElementsByTagName("b")[0].classList.add("show");
-        addLand();
     }
+}
+
+// Simulate the user journal upvotes
+function journalUpvotes(upvotes) {
+    // Get the Divs to modify
+    let footer = document.getElementById("journal-footer");
+    let counter = footer.getElementsByTagName("p")[0];
+    let message = footer.getElementsByTagName("b")[0];
+
+    // Check for activity mark
+    let journalMark = parseInt(sessionStorage.getItem("journalLand"));
+    
+    // Upvotes when the user enter the page
+    if(journalMark == 0) {
+        upvotes++;
+        counter.innerHTML = `${upvotes} / 4`;
+    
+        if(upvotes < 4) {
+            setTimeout(journalUpvotes, 1000, upvotes);
+        } else {
+            // Display message and add land, mark this page as well
+            message.classList.add("show");
+            sessionStorage.setItem("journalLand", "1");
+            addLand();
+        }
+    } else {
+        // Display the journal already got upvoted
+        counter.innerHTML = `4 / 4`;
+        message.classList.add("show");
+    }
+   
 }
 
 // Simualate the upvote buttons
@@ -136,12 +201,27 @@ function checkJournalSubmission() {
     }
 }
 
+// Change the map to fit the current state
+function changeMap(map) {
+    // Get the correct map
+    mapState = loadLandState();
+    mapName = "images/map-" + mapState + "-0.png";
+
+    map.src = mapName;
+}
+
 // Loads the Javascript once it is ready
 document.addEventListener('DOMContentLoaded', function(event) {
 
+    // Initialize activity marks for the first time
+    initializeActivityMarks();
+    
     // JS for home page
     if(document.getElementById("home-js") != null) {
         checkJournalSubmission();
+
+        let map = document.getElementById("map-preview");
+        changeMap(map);
     }
 
     // JS for all journal pages
@@ -150,6 +230,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if(document.getElementById("submit-feedback") != null) {
             SubmitFeedback();
             FeedbackUpvotes(0);
+        }
+
+        // Simulate upvotes for user journal
+        if(document.getElementById("user-entry") != null) {
+            journalUpvotes(0);
         }
 
         // Initalize upvote buttons
@@ -162,6 +247,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
     
     // Change Map image according to land state
-
+    if(document.getElementById("map-js") != null) {
+        let map = document.getElementById("map");
+        changeMap(map);
+    }
 
 })

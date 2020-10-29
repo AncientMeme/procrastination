@@ -11,6 +11,7 @@
  * Login...............Specific Styling for Login Page
  * Journal.............Specific Styling for Journal Page
  * Journal-Submission..Specific Styling for Journal Submission Page
+ * Map.................Specific Styling for Map Page
  */
 
 /*------------------------------------*\
@@ -266,8 +267,17 @@ article, hr{
     align-items: center;
 }
 
-#journal-footer p{
-    margin-left: 1em;
+#journal-footer *{
+    margin-right: 1em;
+}
+
+#journal-footer b {
+    display: none;
+    color: #7BD0A9;
+}
+
+#journal-footer b.show {
+    display: inline;
 }
 
 #feedback-textbox {
@@ -388,4 +398,78 @@ article, hr{
     color: white;
     background-color: #7BD0A9;
     text-decoration: none;
+}
+
+/* Map Page Styling */
+#leaderboard {
+    max-height: 100%;
+    padding: 0 2%;
+    margin: 0 3%;
+    background-color: whitesmoke;
+}
+
+.user {
+    margin-bottom: 0.6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.color-box {
+    width: 1em;
+    height: 1em; 
+    border: 0.1em solid gray;    
+}
+
+#red {
+    background-color: #bd3131;
+}
+
+#yellow {
+    background-color: #e7ce5f;
+}
+
+#blue {
+    background-color: #314ac3;
+}
+
+#cyan {
+    background-color: #70dfb5;
+}
+
+#purple {
+    background-color: #8c318a;
+}
+
+#green {
+    background-color: #75cb54;
+}
+
+#leaderboard h1{
+    margin-top: 0;
+}
+
+#map-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#map-section {
+    height: 100%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+}
+
+#map-section {
+    padding-top: 0;
+}
+
+#map-section article {
+    margin-top: 0;
+}
+
+#map-section img {
+    max-width: 100%;
 }
